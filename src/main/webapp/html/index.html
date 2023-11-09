@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <style type="text/css">
+            h1 { color:green; font-size:50px; font-family:"궁서체"; }
+        /* 재정의 : 선택자(selector){ 속성(property):값(value); } */
+       		.title { color:red; font-size:60px; } /* class */
+       		#title { color:navy; font-size:65px; } /* id */
+        </style>
+    </head>
+    <body>
+        <h1>HTML BASIC</h1>
+        <h1 class="title">HTML BASIC</h1>
+        <h1 id="title">HTML BASIC</h1>
+        <h1 style="color:yellow;">HTML BASIC</h1> <!-- inline css -->
+        <h1>HTML BASIC</h1>
+        <h6>HTML BASIC</h6>
+        <font size="7" face="궁서체"color="blue">HTML BASIC</font>
+		<!-- 여기에서의 속성은 attribute라고 한다. -->
+		<br>
+		<button type="button" onclick="changeContent()">제목 변경</button>b
+		
+		
+		<script>
+			function changeContent(){
+				document.getElementById('title').innerText = "HTML 기본";
+			}
+		</script>
+		
+    </body>
+</html>

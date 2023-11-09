@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<table border="1" id="score_table">
+			<thead>
+				<tr>
+					<th>성명</th>
+					<th>국어</th>
+					<th>수학</th>
+					<th>영어</th>
+					<th>과학</th>
+					<th>총점</th>
+					<th>평균</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+	        var students = [
+	            { 이름: '학생1', 국어: 87, 수학: 98, 영어: 88, 과학: 95 },
+	            { 이름: '학생2', 국어: 92, 수학: 98, 영어: 96, 과학: 98 },
+	            { 이름: '학생3', 국어: 76, 수학: 96, 영어: 94, 과학: 90 }
+	        ];				
+		
+	        students.push({ 이름: '학생4', 국어: 86, 수학: 76, 영어: 84, 과학: 80 });
+	        students.push({ 이름: '학생5', 국어: 82, 수학: 87, 영어: 77, 과학: 85 });
+	        
+	        for (var item of students) {
+	        	// console.log(item);
+	        	item.getSum = function() {
+	        		return this.국어 + this.영어 + this.수학 + this.과학;
+	        	}
+	        	
+	        	item.getAvg = function() {
+	        		return this.getSum() / 4;
+	        	}
+	        	
+	        	item.getGrade = function() {
+	        		return parseInt(this.getAvg / 10);
+	        	}
+	        }
+	        
+	        $(document).ready(function() {
+	        	for (var item of students) {
+					var result = "<tr data-avg='" + item.getAvg() + "' data-grade='" + item.getGrade() + "'><td>"+item.이름+"</td><td>"+item.국어+"</td><td>"+item.수학+"</td><td>"+item.영어+"</td><td>"+item.과학+"</td><td>"+item.getSum()+"</td><td>"+item.getAvg()+"</td></tr>";
+					
+					$('#score_table > tbody').append(result);
+	        	}
+	        });
+	        
+		</script>
+			
+	</body>
+</html>

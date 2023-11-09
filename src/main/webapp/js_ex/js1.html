@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//alert("test");
+			//window.alert("test2");
+			
+			var alert ="red alert";
+			//alert(alert);
+			
+			var a="String";
+			console.log(typeof(a));
+			var a=27;
+			console.log(typeof(a));
+			console.log(typeof(true));
+			console.log(typeof(function(){}));
+			console.log(typeof({}));
+			console.log(typeof([]));
+			console.log(typeof(aa));
+			
+			
+			arry= [100,200,300,400,500];
+			
+			var log = function(item){
+				console.log(item);
+			}
+			
+			var doc = function(item){
+				document.write(item);
+			}
+			
+			arry.forEach(log);
+			arry.forEach(doc);
+			
+			arry.forEach((item) => console.log(item));
+			arry.map((n)=>n*2).forEach((x)=>console.log(x));
+			
+		</script>
+	
+	</body>
+</html>

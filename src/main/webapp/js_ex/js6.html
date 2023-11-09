@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../asset/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../asset/js/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div>{{message}}</div>
+		<div>
+			<input type="text" v-model="message" />
+		</div>
+	</div>
+
+	<div id="app2">
+		<ol>
+			<li v-for="todo in todos">{{ todo.text }}</li>
+		</ol>
+
+	</div>
+
+	<table border="1" id="score_table">
+		<thead>
+			<tr>
+				<th>성명</th>
+				<th>국어</th>
+				<th>수학</th>
+				<th>영어</th>
+				<th>과학</th>
+				<th>총점</th>
+				<th>평균</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr v-for="item in items">
+			<td>{{ item.이름 }}</td>
+			<td>{{ item.국어 }}</td>
+			<td>{{ item.수학 }}</td>
+			<td>{{ item.영어 }}</td>
+			<td>{{ item.과학 }}</td>
+			<<td></td>
+			<<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<script type="text/javascript">
+		var app = new Vue({
+			el:'#app',
+			data:{
+				message: 'Hello~'
+			}
+		});
+		
+		var app2 = new Vue({
+			el:'#app2',
+			data:{
+				todos:[
+					{ text: "자바스크립트 학습" },
+					{ text: "vue 학습" },
+					{ text: "css 학습" },
+				]
+			}
+		});
+		
+		app2.todos.push({text: 'java 학습 '});
+		var app3 = new Vue({
+			el:'#score_table',
+			data:{
+				items:[]
+			},
+			mounted: function(){
+				$.get('./scores.txt', {}, function(data){
+					console.log(data);
+				});
+			},
+			methods: {
+				
+			}
+		
+		});
+		
+	</script>
+</body>
+</html>

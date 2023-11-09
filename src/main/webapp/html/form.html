@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+	<details>
+		<summary>질문 1</summary>
+		<p>오늘 점심은 무엇을 먹을까요?</p>
+	</details>
+
+	<p>
+		오늘
+		<mark>점심 메뉴</mark>
+		<br> 시간
+		<time>12:00</time>
+		<br> 메뉴만족도
+		<meter value="0.8">80%</meter>
+		<br /> 자료업로딩(20%)
+		<progress value="2" max="10"></progress>
+	</p>
+
+	<form name="form" id="form" action="." method="post">
+		이름: <input type="text" name="name" value="" maxlength="10" required
+			placeholder="이름을 입력해 주세요." /><br /> 암호: <input type="password"
+			name="pwd" value="" minlength="5" maxlength="10" required /><br />
+		설명:
+		<textarea name="disc" cols="80" rows="5" maxlength="2000">입력받는 곳</textarea>
+		<br /> 지역: <select name="locals">
+			<option value="경기">경기도</option>
+			<option value="서울">서울시</option>
+			<option value="인천">인천시</option>
+		</select> <input type="text" name="local" list="locals" />
+		<datalist id="locals">
+			<option value="경기" />
+			<option value="서울" />
+			<option value="인천" />
+		</datalist>
+		<br> 나이: <input type="number" min="0" max="120"> <br>
+		날짜: <input type="date" min="2023-01-01" max="2023-12-31"> <br>
+		이메일: <input type="email" list="locals"> <br> 전화번호: <input
+			type="tel"> <br> <input type="checkbox" name="취미"
+			value="등산" id="a"><label for="a">등산</label> <input
+			type="checkbox" name="취미" value="독서" id="b"><label for="b">독서</label><br />
+
+		<input type="radio" name="성별" value="남" id="c" checked><label
+			for="c">남</label> <input type="radio" name="성별" value="여" id="d"><label
+			for="d">여</label><br /> <input type="radio" name="성별" value="선택안함"
+			id="d"><label for="d">선택안함</label><br /> 파일업로드: <input
+			type="file" name="file"> <br> <input type="hidden"
+			name="hidden" value="">
+
+		<button type="submit">등록(서버 전달)</button>
+	</form>
+	<a href="index.html">HTML 기초</a>
+	<a href="index.html" download="html_예제.html">Download</a>
+</body>
+</html>
